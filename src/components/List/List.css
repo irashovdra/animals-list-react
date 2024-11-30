@@ -1,0 +1,10 @@
+.animals-list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.animal-photo {
+  width: 200px;
+  height: 200px;
+}
