@@ -1,17 +1,20 @@
 import "./List.css";
+import { Animal } from "../Animal/Animal";
+import PropTypes from "prop-types";
 
 export const List = ({ data, test }) => {
   return (
     <ul className="animals-list">
-      {data.map(({ name, photo, price }) => {
-        return (
-          <li>
-            <h2>{name}</h2>
-            <img className="animal-photo" src={photo} alt={name} />
-            <p>{price}</p>
-          </li>
-        );
+      {data.map((animal) => {
+        return <Animal key={animal.id} animalInfo={animal} />;
       })}
     </ul>
   );
+};
+
+List.propTypes = {
+  data: PropTypes.array,
+  animal: PropTypes.shape({
+    id: PropTypes.string,
+  }),
 };
